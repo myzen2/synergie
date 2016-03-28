@@ -1,3 +1,0 @@
-Synergie
-
-Synergie Gaming App

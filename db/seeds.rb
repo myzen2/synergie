@@ -12,10 +12,14 @@ require 'faker'
 Comment.delete_all
 Article.delete_all
 User.delete_all
+Forem::Category.delete_all
+Forem::Forum.delete_all
 
 
-
+Forem::Category.create!(:name => 'Administration')
 Forem::Category.create!(:name => 'Jeux')
+Forem::Category.create!(:name => 'Divers')
+
 
 user = User.create(
   pseudo: "myzen2",
@@ -29,7 +33,20 @@ user.save!
 user.update_attribute(:forem_state, 'approved')
 
 unless user.nil?
-  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "General", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "Administration et Règlement", :description => "Liste de nos serveurs et bien plus.")
+  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "Nous rejoindre", :description => "")
+  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "Events", :description => "Ici vous trouverez les events Dayz et Globaux mais aussi les tournois League Of Legends.")
+
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "League Of Legends", :description => "")
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "DayZ", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "Fifa", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "Star Citizen", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "FPS", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.second.id, :name => "MMO", :description => "Default forem created by install")
+
+  forum = Forem::Forum.create(:category_id => Forem::Category.third.id, :name => "Autres Jeux", :description => "Envie de partager votre jeu du moment, c'est ici !!!")
+  forum = Forem::Forum.create(:category_id => Forem::Category.third.id, :name => "La Taverne", :description => "Ici on boit et on parle !!!")
+  forum = Forem::Forum.create(:category_id => Forem::Category.third.id, :name => "Médias", :description => "Stream & Vidéo")
 
   topic1 = forum.topics.build({ :subject => "Fifa", :posts_attributes => [:text => "Jouez à fifa c'est cool"] })
   topic1.user = user
@@ -47,7 +64,14 @@ unless user.nil?
   topic4.user = user
   topic4.save!
 
+  forum = Forem::Forum.create(:title => 'First test forum', :description => 'A test forum, for testing with.')
+  topic5 = forum.topics.new(:subject => 'A test topic')
+  post5 = topic5.posts.build(:text => 'some content.', :user => user)
+  topic5.save
+  post5.save
+
 end
+
 
 
 
