@@ -43,6 +43,6 @@ group :development do
   #gem 'thin', '~> 1.6', '>= 1.6.4'
 end
 group :production do
-  #gem 'puma'
+  gem 'puma'
   gem 'rails_12factor'
 end
