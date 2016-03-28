@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -32,6 +31,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -39,9 +39,8 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
-
-  #gem 'thin', '~> 1.6', '>= 1.6.4'
 end
+
 group :production do
   gem 'puma'
   gem 'rails_12factor'

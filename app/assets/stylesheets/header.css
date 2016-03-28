@@ -16,6 +16,7 @@
 /* Logo
 --------------------------*/
 #main_header_logo { position: absolute; z-index: 1; width: 10%; height: 15%; left:10%; top: 10%; shadowed: 1px 20px 20px blue; }
+
 #btn_scroll_up { cursor: pointer; background: center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
 #btn_scroll_up:hover { bottom: 25px; opacity: 1; }
 
