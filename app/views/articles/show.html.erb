@@ -5,37 +5,50 @@
       <!-- Blog Post -->
       <!-- Title -->
       <h1>
-        <strong>Titre:</strong>
-        <%= raw(@article.titre) %>
+        <strong><%= sanitize @article.titre %></strong>
       </h1>
       <!-- Author -->
       <p class="lead">
-        par <a href="#"><%= current_user.pseudo %> </a>
+        par <a href="#"><%= @article.user.pseudo %> </a>
       </p>
       <hr>
       <!-- Date/Time -->
-      <p><span class="glyphicon glyphicon-time"></span> Posté : <%= @article.created_at %></p>
+      <p><span class="glyphicon glyphicon-time"></span> Posté : <%= @article.created_at.strftime("%A %d %B") %></p>
       <hr>
       <!-- Preview Image -->
       <hr>
       <p>
         <strong>Contenu :</strong>
-        <%= raw(@article.contenu) %>
+        <%= sanitize @article.contenu %>
       </p>
 
-      <h2>Ajouter un commentaire :</h2>
-      <ul>
-        <% if user_signed_in? %>
-        <%= render 'comments/form' %>
+      <% if @article.comments.empty? %>
+        <h3>Il n'y a aucun commentaire</h3>
         <% else %>
-          <li>Vous devez être connecté pour ajouter un commentaire</li>
+        <h2><%=  @article.comments.count %> Commentaire(s)</h2>
+        <%#= render @article.comments %>
+        <% @article.comments.each do |comment| %>
+        <div class="comment_content">
+          <p><%= comment.user.pseudo %></p>
+          <p><%= comment.body %></p>
+          <p><%= time_ago_in_words(comment.created_at) %></p>
+        </div>
         <% end %>
-      </ul>
-
-      <h2>Commentaires</h2>
-      <%=  @article.comments.count %>
-      <%= render @article.comments %>
-      <%= link_to 'Accueil', root_path, class: "btn btn-success" %>
+      <% end %>
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-0">
+          <h3>Ajouter un commentaire :</h3>
+        </div>
+        <ul>
+          <div class="col-lg-5 col-lg-offset-0">
+            <% if user_signed_in? %>
+            <%= render 'comments/form' %>
+          </div>
+          <% else %>
+          <li>Vous devez être connecté pour ajouter un commentaire</li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

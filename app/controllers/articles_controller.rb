@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def accueil
     @articles = Article.order('created_at desc').limit(3)

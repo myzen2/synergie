@@ -44,7 +44,17 @@ h1 {
 /*main {
 background-color: #FBF9E2;
 }*/
-
+/* ----------LOGO---------
+--------------------------*/
+#main_header_logo {
+  position: absolute;
+  z-index: 1;
+  width: 10%;
+  height: 15%;
+  left:10%;
+  top: 10%;
+  shadowed: 1px 20px 20px blue;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -229,13 +239,21 @@ background-color: #FBF9E2;
   background-image: radial-gradient(circle, #1180FE, #000000);
 }
 
-/*.texte {
+.titre_blog {
+  background-color: #000;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.article {
 background-color: #fff;
 border: 1px solid #1180FE;
 padding: 20px;
 color: #000000;
 /*margin-bottom: 20px;*/
-/*}*/
+}
 
 /*
 SIDE right--

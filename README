@@ -18,7 +18,7 @@
 -
 -* Deployment instructions : heroku
 -
--* ...
+-* Launch Puma server : heroku local web -f Procfile.windows
 -
 -
 -Please feel free to use a different markup language if you do not plan to run

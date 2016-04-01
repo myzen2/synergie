@@ -1,25 +1,20 @@
 <!-- Comments Form -->
-<div class="well">
-
   <p>
-  <%= form_for([@article, @article.comments.build]) do |f| %>
-
+    <%= form_for([@article, @article.comments.build]) do |f| %>
   </p>
-  <%= f.label :pseudo %><br>
-  <form role="form">
+    <%#= f.label :pseudo %><br>
+    <%#= f.text_field :commenter, class: "form-control", rows: "1" %>
     <div class="form-group">
-      <%= f.text_field :commenter, class: "form-control", rows: "1" %>
-  </div>
-      <%= f.label :commentaire %><br>
+      <%= f.hidden_field :user_id, value: current_user.id %>
 
-      <%= f.text_area :body, class: "form-control", rows: "3"  %>
-
+      <%= f.hidden_field :article_id, value: @article.id %>
+    </div>
+    <%= f.label :commentaire %><br>
+    <%= f.text_area :body, class: "form-control", rows: "3"  %>
     <p>
       <br>
-      <%= f.submit 'Envoyer', class: "btn btn-primary" %>
+      <%= f.submit "Commenter", class: "btn btn-primary"  %>
     </p>
-
-  <% end %>
+    <% end %>
   </form>
-
 </div>

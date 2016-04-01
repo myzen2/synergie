@@ -1,6 +1,6 @@
 <p>
   <strong>Pseudo :</strong>
-  <%= comment.commenter %>
+  <%= comment.user_id %>
 </p>
 
 <p>
@@ -10,7 +10,7 @@
 
 <% if Comment.any? %>
 <p>
-  <%= link_to 'Supprimer le Commentaire', [comment.article, comment],
+  <%#= link_to 'Supprimer le Commentaire', [comment.article, comment],
   method: :delete,
   data: { confirm: 'Etes-vous sûr ?' } %>
 </p>

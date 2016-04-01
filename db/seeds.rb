@@ -104,14 +104,14 @@ article = Article.create(:user_id => user.id, titre: Faker::Lorem.sentence, cont
 article.user = user
 article.save!
 
-comment = article.comments.build({ :commenter => Faker::Name.name, :body => Faker::Lorem.sentences })
+comment = article.comments.build({ :user_id => user.id, :body => Faker::Lorem.sentences })
 comment.article = article
 comment.save!
 
 10.times do
   article.comments.create({
     article_id: article.id,
-    commenter: Faker::Name.name,
+    user_id: user_id,
     body: Faker::Lorem.sentences
   })
 end

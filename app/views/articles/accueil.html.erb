@@ -8,10 +8,7 @@
       </div>
     </div>
   </div>
-
-
   <!-- Blog Entries Column -->
-  <!--div class="container"-->
   <div class="row">
     <div class="col-md-12">
       <div class="row">
@@ -19,22 +16,25 @@
           <%= render 'partials/side' %>
         </div>
         <div class="col-md-6 col-md-offset-1" >
-          <h2 classe="titre">Dernières news</h2>
-          <% @articles.each do |article| %>
-          <h2><%= sanitize article.titre %></h2>
-          <p><span class="glyphicon glyphicon-time"></span> Publié le <%= t(article.created_at) %></p>
-          <!--p><%#= image_tag article.image %></p-->
-          <div class="texte">
-            <p id="texte"><%= sanitize article.contenu[0...200] + '...' %></p>
-            <br>
-            <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+          <h2 classe="titre_blog">Dernières News</h2>
+            <% @articles.each do |article| %>
+            <div class="article">
+              <h2><%= sanitize article.titre %></h2>
+              <p><span class="glyphicon glyphicon-time"></span> Publié le <%= t(article.created_at) %></p>
+              <!--p><%#= image_tag article.image %></p-->
+              <p><%= sanitize article.contenu[0...200] + '...' %></p>
+              <br>
+              <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+            </div>
             <br>
             <% end %>
-          </div>
+
         </div>
       </div>
     </div>
   </div>
+
+
 
 </main>
 <hr>
