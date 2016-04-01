@@ -303,8 +303,115 @@ th {
 ==============================*/
 .blog {
   margin-top: 40px;
+  background-color: #FFFFFF;
+}
+div.diamond,
+div.ribbon,
+div.right-arrow,
+div.left-arrow {
+  display: inline-block;
+  color: #FFFFFF;
+  font-size: 22px;
+  line-height: 38px;
+  margin: 15px 0;
+  position: relative;
+  width: 200px;
 }
 
+div.diamond:before,
+div.diamond:after,
+div.ribbon:before,
+div.ribbon:after,
+div.right-arrow:before,
+div.right-arrow:after,
+div.left-arrow:before,
+div.left-arrow:after {
+  content: "";
+  border-style: solid;
+  border-width: 0;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+div.diamond {
+  background-color: #CCCCCC;
+}
+
+div.diamond:after,
+div.diamond:before {
+  border-color: transparent #CCCCCC;
+}
+
+div.diamond:before {
+  left: -19px;
+  border-width: 19px 19px 19px 0;
+}
+
+div.diamond:after {
+  right: -19px;
+  border-width: 19px 0 19px 19px;
+}
+
+div.ribbon {
+  background-color: #CCCCCC;
+}
+
+div.ribbon:before,
+div.ribbon:after {
+  top: 6px;
+  z-index: -15;
+}
+
+div.ribbon:before {
+  border-color: #B2B2B2 #B2B2B2 #B2B2B2 transparent;
+  border-width: 19px;
+  left: -25px;
+}
+
+div.ribbon:after {
+  border-color: #B2B2B2 transparent #B2B2B2 #B2B2B2;
+  border-width: 19px;
+  right: -25px;
+}
+
+div.right-arrow {
+  background-color: #CCCCCC;
+}
+
+div.right-arrow:after,
+div.right-arrow:before {
+  border-width: 19px 0 19px 19px;
+}
+
+div.right-arrow:before {
+  border-color: #CCCCCC transparent;
+  left: -19px;
+}
+
+div.right-arrow:after {
+  border-color: transparent #CCCCCC;
+  right: -19px;
+}
+
+div.left-arrow {
+  background-color: #CCCCCC;
+}
+
+div.left-arrow:after,
+div.left-arrow:before {
+  border-width: 19px 19px 19px 0;
+}
+
+div.left-arrow:before {
+  border-color: transparent #CCCCCC;
+  left: -19px;
+}
+
+div.left-arrow:after {
+  border-color: #CCCCCC transparent;
+  right: -19px;
+}
 
 .titre {
   background-color: #000;
