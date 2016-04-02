@@ -1,4 +1,4 @@
-<main role="main">
+
   <!-- Page Content -->
   <div class="row">
     <!-- Site's title -->
@@ -12,11 +12,13 @@
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-2">
-          <%= render 'partials/side' %>
+        <!--left side -->
+        <div class="col-md-3 col-md-offset-0">
+          <%= render 'partials/side_left' %>
         </div>
-        <div class="col-md-6 col-md-offset-1" >
-          <h2 classe="titre_blog">Dernières News</h2>
+        <!--center-->
+        <div class="col-md-5 col-md-offset-1" >
+          <h2 id=titre_accueil>Dernières News</h2>
             <% @articles.each do |article| %>
             <div class="article">
               <h2><%= sanitize article.titre %></h2>
@@ -28,11 +30,16 @@
             </div>
             <br>
             <% end %>
-
         </div>
-      </div>
-    </div>
-  </div>
+        <!--right side -->
+        <div class="col-md-3 col-md-offset-0">
+          <%= render 'partials/side_right' %>
+        </div>
+
+
+      </div><!--end Row-->
+    </div><!--col-md-12-->
+  </div><!--End Row -->
 
 
 

@@ -21,6 +21,7 @@
 @import 'forem/base';
 @import "bootstrap";
 
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -34,17 +35,10 @@ body {
   background-color: #f6f6f6;
 }
 
-h3 {
+h1 h2 h3 {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-}
-
-/*main {
-background-color: #FBF9E2;
-}*/
 /* ----------LOGO---------
 --------------------------*/
 #main_header_logo {
@@ -54,8 +48,8 @@ background-color: #FBF9E2;
   height: 15%;
   left:10%;
   top: 10%;
-  shadowed: 1px 20px 20px blue;
-}
+  /*box-shadow: 1px 20px 20px blue;
+*/}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -90,25 +84,21 @@ background-color: #FBF9E2;
   min-width: 100%;
   height: 300px;
 }
-
 .carousel-fade {
   .carousel-inner {
     .item {
       transition-property: opacity;
     }
-
     .item,
     .active.left,
     .active.right {
       opacity: 0;
     }
-
     .active,
     .next.left,
     .prev.right {
       opacity: 1;
     }
-
     .next,
     .prev,
     .active.left,
@@ -117,7 +107,6 @@ background-color: #FBF9E2;
       transform: translate3d(0, 0, 0);
     }
   }
-
   .carousel-control {
     z-index: 2;
   }
@@ -178,7 +167,6 @@ background-color: #FBF9E2;
   vertical-align: middle;
   margin-bottom: 10%;
   margin-top: -10%;
-
 }
 
 #gravatar {
@@ -195,6 +183,12 @@ background-color: #FBF9E2;
   max-width: 40px;
   align-items: center;
 }
+
+.corps {
+  background-color: #F6F6F6;
+  padding-bottom: 80px;
+  max-width: 100%;
+  }
 
 
 /* ACCUEIL
@@ -228,7 +222,7 @@ background-color: #FBF9E2;
 
 #synergie {
   border: solid 1px #0092D8;
-  margin-top: 5px;
+  margin-top: 40px;
   margin-bottom: 40px;
   padding-top: 10px;
   padding-left: 15px;
@@ -240,9 +234,10 @@ background-color: #FBF9E2;
   background-image: radial-gradient(circle, #1180FE, #000000);
 }
 
-.titre_blog {
-  background-color: #000;
+#titre_accueil {
+  background-color: #1180FE;
   color: #fff;
+  margin-left: -20%;
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
@@ -250,8 +245,10 @@ background-color: #FBF9E2;
 
 .article {
 background-color: #fff;
-border: 1px solid #1180FE;
+border: 1px solid #000000;
 padding: 20px;
+margin-left: -20%;
+
 color: #000000;
 /*margin-bottom: 20px;*/
 }
@@ -262,10 +259,12 @@ SIDE right--
 ---------------------------------------------------*/
 .well {
   position: relative;
-  float: right;
-  margin-top: 2%;
+  float: left;
   text-align: center;
-  margin-right: -10%;
+  padding: 0;
+  width: 100;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 /* TEAMSPEAK
@@ -279,6 +278,16 @@ SIDE right--
 /* TWITCH
 ---------------------------------------------------*/
 
+.well.twitch {
+  margin-top: 90px;
+}
+
+#twitch_logo {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
 #img {
   margin: 20px 115px 20px 115px;
   display: block;
@@ -289,6 +298,32 @@ th {
   text-align: center;
   font-style: bold;
 }
+
+/*-----------------------------------------
+-------------FACEBOOK--------------------*/
+
+.well.fb-page {
+    margin-top: 90px;
+}
+
+
+/* ========================================
+====== TWITTER===========================*/
+
+.twitter-timeline {
+  max-width: 300px;
+
+
+}
+
+/* SERVEURS================================
+=========================================*/
+
+.serveurs {
+  margin-top: 20px;
+  text-align: center;
+}
+
 
 /* FORUM
 ---------------------------*/
@@ -436,19 +471,6 @@ div.left-arrow:after {
 #statut {
   margin-top: 100px;
 }
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
 
 
 /* RESPONSIVE CSS
@@ -490,12 +512,19 @@ div.left-arrow:after {
     margin-top: 120px;
   }
 }
-
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+footer {
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
 /* Custom navbar fixed after scroll
 ----------------------------------------------------------*/
-/*html, body {
-height: 4000px;
-}*/
+
 
 .navbar-fixed {
   top: 0;
