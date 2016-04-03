@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   # You can have the root of your site routed with "root"
   root 'articles#accueil'
   get 'blog' => 'articles#blog'

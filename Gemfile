@@ -13,12 +13,13 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'will_paginate', '3.0.5'
-gem 'forem', :github => "radar/forem", :branch => "rails4"
-gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
-gem 'forem-redcarpet', github: "radar/forem-redcarpet"
+gem 'forem', github: 'radar/forem', branch: 'rails4'
+gem 'forem-bootstrap', github: 'radar/forem-bootstrap'
+gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'puma'
+gem 'activeadmin'
 
 group :development, :test do
   gem 'byebug'
@@ -35,8 +36,8 @@ gem 'simple_form'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'hub', :require=>nil
+  gem 'binding_of_caller', platforms: [:mri_21]
+  gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
