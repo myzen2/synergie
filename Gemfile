@@ -19,7 +19,7 @@ gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'puma'
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'byebug'
