@@ -46,7 +46,7 @@
           </li>
 
           <ul class="navbar-right" >
-            <%# if user_signed_in? %>
+            <% if user_signed_in? %>
             <li><%#= link_to 'Mes messages', conversations_path %></li>
             <li class="parent_submenu_container"><%#= link_to 'Mon profil', dashboard_profile_path %>
               <ul class="main_nav_submenu">
