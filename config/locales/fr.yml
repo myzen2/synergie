@@ -19,6 +19,17 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 fr:
+  mailboxer:
+    conversations:
+      index:
+        inbox: Boîte de réception
+        sent: Messages envoyés
+        trash: Corbeille
+    message_mailer:
+      subject_new: "Mailboxer new message: %{subject}"
+      subject_reply: "Mailboxer new reply: %{subject}"
+    notification_mailer:
+      subject: "Mailboxer new notification: %{subject}"
   activerecord:
     errors:
       messages:

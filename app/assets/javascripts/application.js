@@ -12,11 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
+//= require chosen-jquery
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //= require forem
 //= require ckeditor/init
+//= require messages
 
 $(document).ready(function() {
 

@@ -1,0 +1,20 @@
+<% page_header "Démarrer une Conversation" %>
+
+<%= form_tag messages_path, method: :post do %>
+  <div class="form-group">
+    <%= label_tag 'message[subject]', 'Sujet' %>
+    <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'message[body]', 'Message' %>
+    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'recipients', 'Choisissez le(s) destinataire(s)' %>
+    <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-it' %>
+  </div>
+
+  <%= submit_tag 'Envoyer', class: 'btn btn-primary' %>
+<% end %>

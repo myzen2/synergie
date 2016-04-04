@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'messages/new'
+
+  get 'conversations/index'
+
   ActiveAdmin.routes(self)
   # You can have the root of your site routed with "root"
   root 'articles#accueil'
@@ -9,18 +13,43 @@ Rails.application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
-  mount Forem::Engine, :at => '/forums'
+  mount Forem::Engine, at: '/forums'
 
   devise_for :users
   get 'users' => 'users#index'
+
   mount Ckeditor::Engine => '/ckeditor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  get "dashboard" => 'dashboard#index'
+  get 'dashboard' => 'dashboard#index'
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :restore
+    end
+  end
+  resources :conversations, only: [:index, :show, :destroy] do
+    collection do
+      delete :empty_trash
+    end
+  end
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :mark_as_read
+    end
+  end
+  resources :messages, only: [:new, :create]
+
+  resources :users, only: [:index]
 
   namespace :dashboard do
-  	get "profile"
-	  put "update"
+    get 'profile'
+    put 'update'
   end
 
   resources :articles do

@@ -47,11 +47,12 @@
 
           <ul class="navbar-right" >
             <% if user_signed_in? %>
-            <li class="parent_submenu_container"><%#= link_to 'Mon profil', dashboard_profile_path %>
+            <li class="parent_submenu_container"><%= link_to 'Mon profil', dashboard_profile_path %>
               <ul class="main_nav_submenu">
-                <li><%#= link_to raw("<i class=\"fa fa-user\"></i> <span>Mes infos de connexion</span>"), dashboard_path %>
-                <li><%#= link_to raw("<i class=\"fa fa-dashboard\"></i> <span> Modifier mon profil</span>"), edit_user_registration_path %></li>
-                <li><%#= link_to raw("<i class=\" glyphicon glyphicon-pencil\"></i> <span> Rédiger un article</span>"), new_article_path %></li>
+                <li><%= link_to raw("<i class=\"fa fa-user\"></i> <span>Mes infos de connexion</span>"), dashboard_path %>
+                <li><%= link_to raw("<i class=\"fa fa-dashboard\"></i> <span> Modifier mon profil</span>"), edit_user_registration_path %></li>
+                <li><%= link_to 'Mes messages', conversations_path %></li>
+                <li><%= link_to raw("<i class=\" glyphicon glyphicon-pencil\"></i> <span> Rédiger un article</span>"), new_article_path %></li>
               </ul>
             </li>
             <li><%= link_to "Se déconnecter", main_app.destroy_user_session_path, method: :delete %></li>

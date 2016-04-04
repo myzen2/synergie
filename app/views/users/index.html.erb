@@ -2,30 +2,19 @@
 
 <h1>Listing Users</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Pseudo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% page_header "Users" %>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.nom %></td>
-        <td><%= user.prenom %></td>
-        <td><%= user.pseudo %></td>
-        <td><%#= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
-        <td><%= link_to 'Destroy', users_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= will_paginate %>
 
-<br>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <strong><%= user.name %></strong>
+      <% unless current_user == user %>
+        <%= link_to 'Send message', new_message_path(to: user.id), class: 'btn btn-default btn-sm' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 
-<%= link_to 'New User', new_user_registration_path %>
+<%= will_paginate %>

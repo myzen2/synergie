@@ -20,6 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  mailboxer:
+    conversations:
+      index:
+        inbox: inbox
+        sent: sent
+        trash: trash
+    message_mailer:
+      subject_new: "Mailboxer new message: %{subject}"
+      subject_reply: "Mailboxer new reply: %{subject}"
+    notification_mailer:
+      subject: "Mailboxer new notification: %{subject}"
   hello: "Hello world"
   date:
     formats:

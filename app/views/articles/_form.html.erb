@@ -14,21 +14,21 @@
   <% end %>
 
   <p>
-    <%= f.label :titre %><br>
-    <%= f.cktext_area :titre, :class => "form-control", :rows => "1" %>
+    <%= f.label :titre %> :<br>
+    <%= f.text_area :titre, :class => "form-control", :rows => "1" %>
   </p>
   <p>
     <%= f.label :image %><br>
     <%= f.file_field :image, as: :file %>
   </p>
   <p>
-    <%= f.label :contenu %><br>
+    <%= f.label :contenu %> :<br>
     <%= f.cktext_area :contenu, :class => 'form-control', :rows => "40", :cols => '10' %>
   </p>
 
 
   <p>
-    <%= f.submit :class => "btn btn-primary" %>
+    <%= f.submit "Soumettre un article", :class => "btn btn-primary" %>
   </p>
 
 
