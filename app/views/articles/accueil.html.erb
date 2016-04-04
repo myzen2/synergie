@@ -17,12 +17,12 @@
           <%= render 'partials/side_left' %>
         </div>
         <!--center-->
-        <div class="col-md-5 col-md-offset-1" >
+        <div class="col-md-6" >
           <h2 id=titre_accueil>Dernières News</h2>
             <% @articles.each do |article| %>
             <div class="article">
               <h2><%= sanitize article.titre %></h2>
-              <p><span class="glyphicon glyphicon-time"></span> Publié le <%= t(article.created_at) %></p>
+              <p><span class="glyphicon glyphicon-time"></span> Publié le <%= l(article.created_at, format: ("%e %B %Y")) %></p>
               <!--p><%#= image_tag article.image %></p-->
               <p><%= sanitize article.contenu[0...200] + '...' %></p>
               <br>
@@ -45,5 +45,6 @@
 
 </main>
 <hr>
+
 
 <!-- /.container -->
