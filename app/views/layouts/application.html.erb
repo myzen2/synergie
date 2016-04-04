@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Synergie Gaming" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Synergie Gaming" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <%= javascript_include_tag "forem" %>
     <%= forem_atom_auto_discovery_link_tag %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,7 +19,7 @@
       <%= render "partials/navbar" %>
     </header>
     <main role="main">
-    <div class="container">  
+    <div class="container">
        <%= render 'layouts/messages' %>
        <%= yield %>
        <%= render 'layouts/footer' %>
