@@ -1,0 +1,73 @@
+<!-- Navbar -->
+  <div id="main_nav">
+    <div class="site_width">
+      <nav id="nav_bar" role="navigation">
+        <ul>
+          <li><%= link_to 'Accueil', root_path %></li>
+          <li class="parent_submenu_container"><%= link_to "Synergie", root_path %>
+            <ul class="main_nav_submenu">
+              <li><a href="http://www.team-synergie.fr/actualites/synergie/">Qui sommes-nous ?</a></li>
+              <li><a href="http://www.team-synergie.fr/actualites/concours/">Réglement</a></li>
+            </ul>
+          </li>
+
+          <li class=""><%= link_to 'forum', forem.root_path %></li>
+          <li class=" parent_submenu_container"><a href="#">Nos jeux</a>
+            <ul class="main_nav_submenu">
+              <li><a href="http://albion-online.team-synergie.fr/">Albion Online</a></li>
+              <li><a href="http://ark.team-synergie.fr/">ARK : Survival Evolved</a></li>
+              <li><a href="http://black-desert-online.team-synergie.fr/">Black Desert Online</a></li>
+              <li><a href="http://blade-and-soul.team-synergie.fr/">Blade and Soul</a></li>
+              <li><a href="http://cs-go.team-synergie.fr/">Counter Strike : Global Offensive</a></li>
+              <li><a href="http://darkrp.team-synergie.fr/">Garry's Mod : DarkRP</a></li>
+              <li><a href="http://diablo-3.team-synergie.fr/">Diablo 3</a></li>
+              <li><a href="http://dofus.team-synergie.fr/">Dofus</a></li>
+              <li><a href="http://hearthstone.team-synergie.fr/">HearthStone</a></li>
+              <li><a href="http://heroes-of-the-storm.team-synergie.fr/">Heroes of the Storm</a></li>
+              <li><a href="http://league-of-legends.team-synergie.fr/">League of Legends</a></li>
+              <li><a href="http://lost-ark.team-synergie.fr/">Lost Ark</a></li>
+              <li><a href="http://overwatch.team-synergie.fr/">Overwatch</a></li>
+              <li><a href="http://star-citizen.team-synergie.fr/">Star Citizen</a></li>
+            </ul>
+          </li>
+          <li><%= link_to 'blog', main_app.blog_path %></li>
+          <li class="parent_submenu_container"><a href="http://www.team-synergie.fr/live/">Médias</a>
+            <ul class="main_nav_submenu">
+              <li><a href="http://www.team-synergie.fr/live/">Voir le live de Synergie</a></li>
+              <li><a href="http://www.team-synergie.fr/mon-live-sur-synergie/">Mon live sur SynergieWebTV</a></li>
+            </ul>
+          </li>
+          <li class="parent_submenu_container"><a href="http://www.team-synergie.fr/forum/members/?type=staff">Le staff</a>
+            <ul class="main_nav_submenu">
+              <li><a href="http://www.team-synergie.fr/forum/members/?type=staff">Organigramme</a></li>
+              <li><a href="http://www.team-synergie.fr/forum/forums/contacter-le-staff.327/">Contacter le staff</a></li>
+              <li><a href="http://www.team-synergie.fr/forum/threads/modele-de-candidature-pour-integrer-le-staff.6083/">Le staff recrute !</a></li>
+            </ul>
+          </li>
+
+          <ul class="navbar-right" >
+            <% if user_signed_in? %>
+            <li><%#= link_to 'Mes messages', conversations_path %></li>
+            <li class="parent_submenu_container"><%#= link_to 'Mon profil', dashboard_profile_path %>
+              <ul class="main_nav_submenu">
+                <li><%#= link_to raw("<i class=\"fa fa-user\"></i> <span>Mes infos de connexion</span>"), dashboard_path %>
+                <li><%#= link_to raw("<i class=\"fa fa-dashboard\"></i> <span> Modifier mon profil</span>"), edit_user_registration_path %></li>
+                <li><%#= link_to raw("<i class=\" glyphicon glyphicon-pencil\"></i> <span> Rédiger un article</span>"), new_article_path %></li>
+              </ul>
+            </li>
+            <li><%= link_to "Se déconnecter", main_app.destroy_user_session_path, method: :delete %></li>
+          </ul>
+
+            <!--li id="gravatar"><%#= gravatar_image_tag current_user.email %></li-->
+
+            <% else %>
+              <li class=""><%= link_to "Se connecter", main_app.new_user_session_path %></li>
+              <li class=""><%= link_to "S'inscrire", main_app.new_user_registration_path %></li>
+            <% end %>
+          </ul>
+      </ul>
+
+      </nav>
+    </div>
+  </div>
+</div>

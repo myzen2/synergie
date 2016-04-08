@@ -33,7 +33,8 @@ main {
   background-color: #F6F6F6;
   padding-bottom: 80px;
   max-width: 100%;
-  }
+  margin: 0 auto;
+}
 section {
   @extend .row;
   margin-top: 20px;
@@ -77,10 +78,10 @@ section {
 }
 a, a:link, a:visited {
   /*! color: #38678b; */
-  /*! text-decoration: underline; */
+  /*! text-decoration: underline;*/
 }
 
-/* line 5, C:/Ruby21/lib/ruby/gems/2.1.0/bundler/gems/activeadmin-2f7703600953/app/assets/stylesheets/active_admin/components/_links.scss */
+/* line 5, C:/Ruby21/lib/ruby/gems/2.1.0/bundler/gems/activeadmin-2f7703600953/app/assets/stylesheets/active_admin/components/_links.scss*/
 a:hover {
   text-decoration: none;
 }

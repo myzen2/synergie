@@ -256,6 +256,30 @@ color: #000000;
     }
 }
 
+.panel-heading {
+  height: 120px;
+}
+
+
+.panel-body {
+  height: 220px;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.col-md-4 .col-sm-6 {
+  margin-bottom: 20px;
+}
+/* SIDE left--
+----------------------------------------------------
+---------------------------------------------------*/
+
+
+
+
+
 /*
 SIDE right--
 ----------------------------------------------------
@@ -286,6 +310,7 @@ SIDE right--
 }
 
 #twitch_logo {
+  text-align: center;
   margin: 0 auto;
   margin-bottom: 30px;
   margin-top: 10px;
