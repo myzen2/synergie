@@ -19,10 +19,10 @@ gem 'forem-bootstrap', github: 'radar/forem-bootstrap'
 gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'faker', '~> 1.6', '>= 1.6.3'
-gem 'puma'
 gem 'activeadmin', github: 'activeadmin'
 gem 'mailboxer', '~> 0.13.0'
 gem 'chosen-rails'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug'
@@ -30,6 +30,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
@@ -48,4 +49,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'puma'
 end

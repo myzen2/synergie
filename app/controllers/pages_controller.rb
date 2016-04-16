@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
 
-  def about
+  def reglement
+
   end
 
-  def blog
+  def qui
   end
 
   def index

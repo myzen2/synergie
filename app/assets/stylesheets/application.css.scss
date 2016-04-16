@@ -40,6 +40,10 @@ body {
 h1 h2 h3 {
   text-align: center;
 }
+h2 {
+  font-size: 25px; /* Some tweener fallback that doesn't look awful */
+
+}
 
 /* ----------LOGO---------
 --------------------------*/
@@ -172,9 +176,11 @@ h1 h2 h3 {
   margin-top: -10%;
 }
 */
-.gravatar {
-  float: left;
-  margin-right: 10px;
+#gravatar {
+  border-radius: 100%;
+  height: 30%;
+  width: 30%;
+  float: right;
 }
 
 .gravatar_edit {
@@ -258,6 +264,7 @@ color: #000000;
 
 .panel-heading {
   height: 120px;
+
 }
 
 
@@ -276,6 +283,13 @@ color: #000000;
 ----------------------------------------------------
 ---------------------------------------------------*/
 
+.twitter {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+.facebook {
+  margin-top: 20px;
+}
 
 
 
@@ -284,6 +298,10 @@ color: #000000;
 SIDE right--
 ----------------------------------------------------
 ---------------------------------------------------*/
+.side_right {
+  /*float: right;
+*/}
+
 .well {
   position: relative;
   float: left;
@@ -294,6 +312,11 @@ SIDE right--
   margin-bottom: 20px;
 }
 
+.serveurs {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
 /* TEAMSPEAK
 ---------------------------------------------------*/
 #teamspeak {
@@ -305,8 +328,9 @@ SIDE right--
 /* TWITCH
 ---------------------------------------------------*/
 
-.well.twitch {
-  margin-top: 90px;
+.twitch {
+  margin-left: 0;
+  max-width: 100%;
 }
 
 #twitch_logo {
@@ -344,6 +368,15 @@ th {
 
 }
 
+/* PAYPAL===================================
+==========================================*/
+
+.paypal {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* SERVEURS================================
 =========================================*/
 
@@ -368,113 +401,7 @@ th {
   margin-top: 40px;
   background-color: #FFFFFF;
 }
-div.diamond,
-div.ribbon,
-div.right-arrow,
-div.left-arrow {
-  display: inline-block;
-  color: #FFFFFF;
-  font-size: 22px;
-  line-height: 38px;
-  margin: 15px 0;
-  position: relative;
-  width: 200px;
-}
 
-div.diamond:before,
-div.diamond:after,
-div.ribbon:before,
-div.ribbon:after,
-div.right-arrow:before,
-div.right-arrow:after,
-div.left-arrow:before,
-div.left-arrow:after {
-  content: "";
-  border-style: solid;
-  border-width: 0;
-  height: 0;
-  position: absolute;
-  width: 0;
-}
-
-div.diamond {
-  background-color: #CCCCCC;
-}
-
-div.diamond:after,
-div.diamond:before {
-  border-color: transparent #CCCCCC;
-}
-
-div.diamond:before {
-  left: -19px;
-  border-width: 19px 19px 19px 0;
-}
-
-div.diamond:after {
-  right: -19px;
-  border-width: 19px 0 19px 19px;
-}
-
-div.ribbon {
-  background-color: #CCCCCC;
-}
-
-div.ribbon:before,
-div.ribbon:after {
-  top: 6px;
-  z-index: -15;
-}
-
-div.ribbon:before {
-  border-color: #B2B2B2 #B2B2B2 #B2B2B2 transparent;
-  border-width: 19px;
-  left: -25px;
-}
-
-div.ribbon:after {
-  border-color: #B2B2B2 transparent #B2B2B2 #B2B2B2;
-  border-width: 19px;
-  right: -25px;
-}
-
-div.right-arrow {
-  background-color: #CCCCCC;
-}
-
-div.right-arrow:after,
-div.right-arrow:before {
-  border-width: 19px 0 19px 19px;
-}
-
-div.right-arrow:before {
-  border-color: #CCCCCC transparent;
-  left: -19px;
-}
-
-div.right-arrow:after {
-  border-color: transparent #CCCCCC;
-  right: -19px;
-}
-
-div.left-arrow {
-  background-color: #CCCCCC;
-}
-
-div.left-arrow:after,
-div.left-arrow:before {
-  border-width: 19px 19px 19px 0;
-}
-
-div.left-arrow:before {
-  border-color: transparent #CCCCCC;
-  left: -19px;
-}
-
-div.left-arrow:after {
-  border-color: #CCCCCC transparent;
-  right: -19px;
-}
 
 .titre {
   background-color: #000;

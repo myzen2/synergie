@@ -18,32 +18,91 @@
     </div>
 
 
-<% for article in @articles %>
-<div class="col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2><%= sanitize article.titre %></h2>
+    <div class="col-md-4">
+      <% for article in @articles %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2><%= sanitize article.titre %></h2>
 
+        </div>
+        <div class="panel-body">
+          <p><span class="glyphicon glyphicon-time"></span> Publié le <%= l(article.created_at, format: ("%e %B %Y")) %></p>
+          <p><%= sanitize article.contenu[0...200] + '...' %></p>
+          <br>
+          <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div class="panel-body">
-      <p><span class="glyphicon glyphicon-time"></span> Publié le <%= l(article.created_at, format: ("%e %B %Y")) %></p>
-      <p><%= sanitize article.contenu[0...200] + '...' %></p>
-      <br>
-      <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+
+    <!--center-->
+    <div class="col-md-4"><!--twitter-->
+      <div class="twitter">
+        <a class="twitter-timeline" href="https://twitter.com/SynergieG" data-widget-id="716152660647407616" class="responsive" height="500"
+        width="430" data-chrome="nofooter" data-link-color="#820bbb" data-border-color="#a80000">Tweets de @SynergieG</a>
+      </div>
+
+      <div class="facebook"><!--facebook-->
+        <div class="fb-page" data-href="https://www.facebook.com/SynergieGaming" data-tabs="timeline" data-width="410" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SynergieGaming"><a href="https://www.facebook.com/SynergieGaming">Synergie Gaming</a></blockquote></div></div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-4"><!--Teamspeak-->
+      <div class="side_right">
+        <div class="teamspeak">
+        <script type="text/javascript">
+        var ouvert = 1;
+        var style = "classic";
+        var couleur_fond = "E9E9E9";
+        var couleur_texte = "000000";
+        var largeur = 420;
+        var hauteur = 500;
+        var ip = "ts.synergiegaming.fr";
+        var port = 9987;
+        var query = 10011;
+        var lang = "fr";
+        var taille_police = 12;
+        var voir_salons = 1;
+        </script>
+        <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
+      </div>
+
+      <div class="paypal">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_donations">
+          <input type="hidden" name="business" value="synergiemultigaming@gmail.com">
+          <input type="hidden" name="lc" value="FR">
+          <input type="hidden" name="item_name" value="Team Synergie">
+          <input type="hidden" name="no_note" value="0">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+          <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+          <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+
+
+        <div class="serveurs">
+          <h3>Nos serveurs</h3>
+
+          <iframe src="http://cache.www.gametracker.com/components/html0/?host=151.80.233.125:9987&bgColor=1F2642&fontColor=8790AE&titleBgColor=11172D&titleColor=FFFFFF&borderColor=333333&linkColor=FF9900&borderLinkColor=999999&showMap=0&showCurrPlayers=0&showTopPlayers=0&showBlogs=0&width=420" frameborder="0" scrolling="no" width="440" height="164"></iframe>
+          <iframe src="http://cache.www.gametracker.com/components/html0/?host=85.190.128.211:2302&bgColor=1F2642&fontColor=8790AE&titleBgColor=11172D&titleColor=FFFFFF&borderColor=333333&linkColor=FF9900&borderLinkColor=999999&showMap=1&showCurrPlayers=0&showTopPlayers=0&showBlogs=0&width=420" frameborder="0" scrolling="no" width="440" height="288"></iframe>
+        </div>
+
+      </div>
+
     </div>
   </div>
-  <br>
-</div>
-
-<% end %>
-</div>
 
 
       <!-- /.row -->
       <!-- Features Section -->
       <div class="row">
           <div class="col-lg-12">
-              <h2 class="page-header">Modern Business Features</h2>
+              <h2 class="page-header">Suivez nos lives</h2>
           </div>
           <div class="col-md-6">
               <p>The Modern Business template by Start Bootstrap includes:</p>
@@ -59,114 +118,40 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
           </div>
           <div class="col-md-6">
-            <div class="">
+            <div class="twitch">
               <h4><%= image_tag "twitch_logo", id:"twitch_logo" %></h4>
-              <p class="responsive">
-                <iframe src="https://player.twitch.tv/?channel=synergiegaming" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/synergiegaming?tt_large=live_embed&tt_content=text_link&fullscreen=true" style="display:block; width:345px; font-weight:normal; font-size:12px;text-decoration:none;">SynergieGaming est sur twitch</a>
-            </div>
+                <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+                <div id="{PLAYER_DIV_ID}"></div>
+                <script type="text/javascript">
+                var options = {
+                  width: 630,
+                  height: 400,
+                  channel: "synergiegaming",
+                  //video: "{VIDEO_ID}"
+                };
+                var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+                player.setVolume(0.5);
+                </script>
 
-              <!--img class="img-responsive" src="http://placehold.it/700x450" alt=""-->
+            </div>
           </div>
       </div>
       <!-- /.row -->
 
-      <!-- réseaux sociaux -->
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="page-header">Suivez-nous sur les réseaux sociaux</h2>
-        </div>
-        <div class="col-md-4"><!--facebook-->
-          <div class="">
-            <div class="">
-              <div class="fb-page" data-href="https://www.facebook.com/SynergieGaming/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                <div class="fb-xfbml-parse-ignore">
-                  <blockquote cite="https://www.facebook.com/SynergieGaming/">
-                    <a href="https://www.facebook.com/SynergieGaming/"></a>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4"><!--twitter-->
-            <a class="twitter-timeline" href="https://twitter.com/SynergieG" data-widget-id="716152660647407616" class="responsive" height="500"
-            width="500" data-chrome="nofooter" data-link-color="#820bbb" data-border-color="#a80000">Tweets de @SynergieG</a>
-        </div>
-
-
-      <div class="col-md-4"><!--Teamspeak-->
-
-          <script type="text/javascript">
-          var ouvert = 1;
-          var style = "classic";
-          var couleur_fond = "E9E9E9";
-          var couleur_texte = "000000";
-          var largeur = 400;
-          var hauteur = 500;
-          var ip = "ts.synergiegaming.fr";
-          var port = 9987;
-          var query = 10011;
-          var lang = "fr";
-          var taille_police = 12;
-          var voir_salons = 1;
-          </script>
-          <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
-      </div>
-    </div>
-
-
-      <div class="well">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_donations">
-          <input type="hidden" name="business" value="synergiemultigaming@gmail.com">
-          <input type="hidden" name="lc" value="FR">
-          <input type="hidden" name="item_name" value="synergiemultigaming">
-          <input type="hidden" name="no_note" value="0">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-          <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-          <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-        </form>
-      </div>
 
 
 
 
-      <div class="well">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_donations">
-          <input type="hidden" name="business" value="synergiemultigaming@gmail.com">
-          <input type="hidden" name="lc" value="FR">
-          <input type="hidden" name="item_name" value="Team Synergie">
-          <input type="hidden" name="no_note" value="0">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-          <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-          <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-        </form>
-      </div>
+
+
+
+
       <br>
       <br>
       <div class="col-md-4">
-        <div class="">
-          <div class="">
-            <div class="#serveurs">
-              <h3>Nos serveurs</h3>
-              <!-- BEGIN: Custom advanced (www.pluginaria.com) -->
-              <iframe src="http://cache.www.gametracker.com/components/html0/?host=151.80.233.125:9987&bgColor=1F2642&fontColor=8790AE&titleBgColor=11172D&titleColor=FFFFFF&borderColor=333333&linkColor=FF9900&borderLinkColor=999999&showMap=0&showCurrPlayers=0&showTopPlayers=0&showBlogs=0&width=240" frameborder="0" scrolling="no" width="340" height="164"></iframe>
-              <iframe src="http://cache.www.gametracker.com/components/html0/?host=85.190.128.211:2302&bgColor=1F2642&fontColor=8790AE&titleBgColor=11172D&titleColor=FFFFFF&borderColor=333333&linkColor=FF9900&borderLinkColor=999999&showMap=1&showCurrPlayers=0&showTopPlayers=0&showBlogs=0&width=240" frameborder="0" scrolling="no" width="240" height="288"></iframe><!-- END: Custom advanced (www.pluginaria.com) -->
-            </div>
 
-          </div>
-          <div class="panel-body">
-
-          </div>
-        </div>
 
       </div>
-
-
 
 
 

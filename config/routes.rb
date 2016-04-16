@@ -56,6 +56,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'qui' =>  'pages#qui'
+  get 'reglement' => 'pages#reglement'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
