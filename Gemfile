@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'sass-rails', '~> 5.0'
+gem 'compass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -22,7 +23,7 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'activeadmin', github: 'activeadmin'
 gem 'mailboxer', '~> 0.13.0'
 gem 'chosen-rails'
-gem 'thin'
+#gem 'thin'
 
 group :development, :test do
   gem 'byebug'
@@ -49,5 +50,5 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'puma'
+  #gem 'puma'
 end

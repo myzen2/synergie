@@ -27,7 +27,7 @@
         </div>
         <div class="panel-body">
           <p><span class="glyphicon glyphicon-time"></span> Publié le <%= l(article.created_at, format: ("%e %B %Y")) %></p>
-          <p><%= sanitize article.contenu[0...200] + '...' %></p>
+          <p class="texte"><%= sanitize article.contenu[0...200] + '...' %></p>
           <br>
           <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
         </div>
@@ -52,38 +52,36 @@
     <div class="col-md-4"><!--Teamspeak-->
       <div class="side_right">
         <div class="teamspeak">
-        <script type="text/javascript">
-        var ouvert = 1;
-        var style = "classic";
-        var couleur_fond = "E9E9E9";
-        var couleur_texte = "000000";
-        var largeur = 420;
-        var hauteur = 500;
-        var ip = "ts.synergiegaming.fr";
-        var port = 9987;
-        var query = 10011;
-        var lang = "fr";
-        var taille_police = 12;
-        var voir_salons = 1;
-        </script>
-        <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
-      </div>
+          <script type="text/javascript">
+          var ouvert = 1;
+          var style = "classic";
+          var couleur_fond = "E9E9E9";
+          var couleur_texte = "000000";
+          var largeur = 420;
+          var hauteur = 500;
+          var ip = "ts.synergiegaming.fr";
+          var port = 9987;
+          var query = 10011;
+          var lang = "fr";
+          var taille_police = 12;
+          var voir_salons = 1;
+          </script>
+          <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
+        </div>
 
-      <div class="paypal">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_donations">
-          <input type="hidden" name="business" value="synergiemultigaming@gmail.com">
-          <input type="hidden" name="lc" value="FR">
-          <input type="hidden" name="item_name" value="Team Synergie">
-          <input type="hidden" name="no_note" value="0">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-          <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-          <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-        </form>
-      </div>
-
-
+        <div class="paypal">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="synergiemultigaming@gmail.com">
+            <input type="hidden" name="lc" value="FR">
+            <input type="hidden" name="item_name" value="Team Synergie">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="currency_code" value="EUR">
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+            <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+            <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
 
         <div class="serveurs">
           <h3>Nos serveurs</h3>
@@ -98,126 +96,95 @@
   </div>
 
 
-      <!-- /.row -->
-      <!-- Features Section -->
-      <div class="row">
-          <div class="col-lg-12">
-              <h2 class="page-header">Suivez nos lives</h2>
-          </div>
-          <div class="col-md-6">
-              <p>The Modern Business template by Start Bootstrap includes:</p>
-              <ul>
-                  <li><strong>Bootstrap v3.2.0</strong>
-                  </li>
-                  <li>jQuery v1.11.0</li>
-                  <li>Font Awesome v4.1.0</li>
-                  <li>Working PHP contact form with validation</li>
-                  <li>Unstyled page elements for easy customization</li>
-                  <li>17 HTML pages</li>
-              </ul>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-          </div>
-          <div class="col-md-6">
-            <div class="twitch">
-              <h4><%= image_tag "twitch_logo", id:"twitch_logo" %></h4>
-                <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
-                <div id="{PLAYER_DIV_ID}"></div>
-                <script type="text/javascript">
-                var options = {
-                  width: 630,
-                  height: 400,
-                  channel: "synergiegaming",
-                  //video: "{VIDEO_ID}"
-                };
-                var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
-                player.setVolume(0.5);
-                </script>
+  <!-- /.row -->
+  <!-- Features Section -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Suivez nos lives</h2>
+    </div>
+    <div class="col-md-6">
+      <iframe src="http://www.twitch.tv/synergiegaming/chat?popout=" scrolling="no" width="300" frameborder="0" height="410"></iframe>
+    </div>
+    <div class="col-md-6">
+      <div class="twitch">
+        <h4><%= image_tag "twitch_logo", id:"twitch_logo" %></h4>
+        <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+        <div id="{PLAYER_DIV_ID}"></div>
+        <script type="text/javascript">
+        var options = {
+          width: 630,
+          height: 400,
+          channel: "synergiegaming",
+          //video: "{VIDEO_ID}"
+        };
+        var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+        player.setVolume(0.5);
+        </script>
 
-            </div>
-          </div>
       </div>
-      <!-- /.row -->
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Portfolio Section -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Visionnez nos vidéos</h2>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <a href="portfolio-item.html">
+        <img class="img-responsive img-portfolio img-hover image" src="http://placehold.it/700x450" alt="">
+      </a>
+    </div>
+  </div>
+  <!-- /.row -->
 
 
 
+  <hr>
 
-
-
-
-
-
-      <br>
-      <br>
+  <!-- Call to Action Section -->
+  <div class="well">
+    <div class="row">
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+      </div>
       <div class="col-md-4">
-
-
+        <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
       </div>
+    </div>
+  </div>
 
-
-
-
-
-
-
-      <!-- Portfolio Section -->
-      <div class="row">
-          <div class="col-lg-12">
-              <h2 class="page-header">Portfolio Heading</h2>
-          </div>
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-              <a href="portfolio-item.html">
-                  <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-              </a>
-          </div>
-      </div>
-      <!-- /.row -->
-
-
-
-      <hr>
-
-      <!-- Call to Action Section -->
-      <div class="well">
-          <div class="row">
-              <div class="col-md-8">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-              </div>
-              <div class="col-md-4">
-                  <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-              </div>
-          </div>
-      </div>
-
-      <hr>
+  <hr>
   <!-- Page Content -->
 
 
-<!-- /.container -->
+  <!-- /.container -->
