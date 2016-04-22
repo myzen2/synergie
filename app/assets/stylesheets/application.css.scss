@@ -120,62 +120,86 @@ h2 {
 
 /* NAVBAR
 ----------------------------------------------------*/
-.main_nav {
-  width: 100%;
-  height: 40px;
-  background-image: radial-gradient(circle, #2E68E2, #000000);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0% 0%;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-size: auto auto;
-  position: relative;
-  box-shadow: 1px 10px 12px #000000;
-  position: relative;
+/* navbar */
+
+#barre {
+  border-color: #1079F0;
+  background-color: #000;
+}
+.navbar-default .navbar-collapse {
+  background-color: #000;
+  border: .5px solid red;
+}
+.navbar-default {
+    background: -webkit-linear-gradient(#1079F0, #0040ff, #1079F0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1079F0, #0040ff, #1079F0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1079F0, #0040ff, #1079F0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1079F0, #0040ff, #1079F0); /* Standard syntax */
+    box-shadow: 2px 12px 16px #000000;
+    text-transform: capitalize;
+    position: relative;
+    margin-bottom: 60px;
+    background-color: #000;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;/*
+    background-color: #000;*/
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #00FFFF;
+    background: -webkit-linear-gradient(#000000, #0040ff, #000000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#000000, #0040ff, #000000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#000000, #0040ff, #000000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#000000, #0040ff, #000000);
+
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #00FFFF;
+    background-color: #000;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    /*border-top-color: #777;
+    border-bottom-color: #777;*/
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
 }
 
-#main_nav {
-  width: 100%;
-  background-image: radial-gradient(circle, #000000, #1180FE);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0% 0%;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-size: auto auto;
-  position: relative;
-  box-shadow: 2px 12px 16px #000000;
-  position: relative;
-  margin-bottom: 60px;
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  /*border-top-color: #555;
+  border-bottom-color: #555;*/
 }
 
-.main-nav-scrolled {
-  position: fixed;
-  width: 100%;
-  top: 0;
+
+.dropdown-menu {
+  color: #00FFFF;/*
+  background-color: #D5D5D5;*/
 }
 
-#main_nav.main_nav_fixed
-{
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 1000;
-}
 
-.navbar-brand {
-  margin-top: -0.6%;
-}
-/*
-.nav {
-  margin-right: 10%;
-  font-size: 35px;
-  vertical-align: middle;
-  margin-bottom: 10%;
-  margin-top: -10%;
-}
-*/
 #gravatar {
   border-radius: 100%;
   height: 30%;
